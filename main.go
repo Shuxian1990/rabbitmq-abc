@@ -1,6 +1,8 @@
 package main
 
 import (
+	"flag"
+
 	"github.com/streadway/amqp"
 	"printfcoder.com/rabbitmq-abc/rabbitmq"
 )
@@ -11,7 +13,26 @@ func main() {
 	connection, _ := amqp.Dial(url)
 	defer connection.Close()
 
-	// 测试direct
-	rabbitmq.Direct(connection)
+	tp := flag.String("type", "", "fanout类型")
+	flag.Parse()
 
+	// 测试direct
+	if *tp == "direct" {
+		rabbitmq.Direct(connection)
+	}
+
+	// 测试fanout
+	if *tp == "fanout" {
+		rabbitmq.Fanout(connection)
+	}
+
+	// 测试topic
+	if *tp == "topic" {
+		rabbitmq.Topic(connection)
+	}
+
+	// 测试header
+	if *tp == "header" {
+		rabbitmq.Header(connection)
+	}
 }
