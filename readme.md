@@ -499,6 +499,6 @@ key all 匹配： I'm headers Timestamp: 2016-03-21 20:20:43 +0800 CST
 
 本篇我们介绍了exchange的name与type。重点讲了type的作用规则，特别是4个类型direct、fanout、header、topic的用法与场景。希望大家有所收获。下一篇我们讲exchange的两个重要参数[durable, autoDelete][durable_autoDelete]
 
-[源码]: https://github.com/printfcoder/rabbitmq-abc/tree/part_1
+[源码]: https://github.com/printfcoder/rabbitmq-abc/tree/1.3.1
 [exchange_fanout]: http://www.rabbitmq.com/tutorials/amqp-concepts.html#exchange-fanout
 [durable_autoDelete]:https://printfcoder.github.io/myblog/mq/2016/01/21/rabbitmq-abc-part-1-3-2-how-to-use-durable-and-autoDelete/
